@@ -25,9 +25,6 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         ca-certificates \
         cmake \
         git \
-        tcl-dev \
-        tk \
-        tk-dev \
         vim \
         wget \
         && \
@@ -44,7 +41,6 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     DEBIAN_FRONTEND=noninteractive $APT_INSTALL \
         python3.6 \
         python3.6-dev \
-        python3-tk \
         && \
     wget -O ~/get-pip.py \
         https://bootstrap.pypa.io/get-pip.py && \
@@ -63,6 +59,8 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         pandas \
         scipy \
         scikit-learn \
+        joblib \
+        tqdm \
         && \
 
 # ==================================================================
@@ -85,4 +83,4 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # TensorBoard
 EXPOSE 6006
 # Jupyter
-EXPOSE 8888
+EXPOSE 8000
